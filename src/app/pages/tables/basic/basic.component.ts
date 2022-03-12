@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/core/services/dataService';
+import { Account } from 'src/app/entity/account.entity';
 
 @Component({
   selector: 'app-basic',
@@ -13,10 +15,17 @@ export class BasicComponent implements OnInit {
 
    // bread crumb items
    breadCrumbItems!: Array<{}>;
+   dataAccount!: Account[];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    console.log('------------------------');
+    this.dataService.sendGetRequest().subscribe((response: any) => {
+      this.dataAccount = response;
+      console.log(response);
+    });
+
     //BreadCrumb 
     this.breadCrumbItems = [
       { label: 'Tables' },
