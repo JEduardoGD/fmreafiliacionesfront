@@ -6,6 +6,9 @@ import { Table } from './table.model';
 import { tableData } from './data';
 import { AdvancedService } from './datatable.service';
 import { AdvancedSortableDirective, SortEvent } from './sortable.directive';
+import { DataService } from 'src/app/core/services/dataService';
+import { Account } from 'src/app/entity/account.entity';
+import { AccountModule } from 'src/app/account/account.module';
 
 @Component({
   selector: 'app-datatable',
@@ -19,6 +22,7 @@ import { AdvancedSortableDirective, SortEvent } from './sortable.directive';
  */
 export class DatatableComponent implements OnInit {
 
+
   // bread crumb items
   breadCrumbItems!: Array<{}>;
 
@@ -28,14 +32,20 @@ export class DatatableComponent implements OnInit {
   total$: Observable<number>;
   @ViewChildren(AdvancedSortableDirective)
   headers!: QueryList<AdvancedSortableDirective>;
+  dataAccount!: Account[];
 
   public isCollapsed = true;
-  constructor(public service: AdvancedService) {
+  constructor(public service: AdvancedService, private dataService: DataService) {
     this.tables$ = service.tables$;
     this.total$ = service.total$;
   }
 
   ngOnInit(): void {
+    console.log('------------------------');
+    this.dataService.sendGetRequest().subscribe((response: any) => {
+      this.dataAccount = response;
+      console.log(response);
+    });
 
     //BreadCrumb 
     this.breadCrumbItems = [
