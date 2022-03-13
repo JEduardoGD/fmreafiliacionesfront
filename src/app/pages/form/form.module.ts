@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbDatepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Select2Module } from "ng-select2-component";
+import { Select2Module } from 'ng-select2-component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NgxDropzoneModule } from 'ngx-dropzone';

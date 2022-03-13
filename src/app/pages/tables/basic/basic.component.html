@@ -3,6 +3,116 @@
 <!-- end page title -->
 
 <div class="row">
+  <div class="col-lg-12">
+      <div class="card">
+          <div class="card-body">
+              <h4 class="card-title">Horizontal Form</h4>
+              <p class="card-title-desc">Be sure to add
+                  <code>.col-form-label</code> to your <code>&lt;label&gt;</code>s as well so they’re vertically
+                  centered with
+                  their
+                  associated form controls.
+              </p>
+              <div class="row mb-3">
+                  <label for="idu" class="col-sm-2 col-4 col-form-label">IDU</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="idu" [(ngModel)]="newAccount.idu">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="nombre" class="col-sm-2 col-4 col-form-label">NOMBRE</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="nombre">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="apellido" class="col-sm-2 col-4 col-form-label">APELLIDO</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="apellido">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="categoria" class="col-sm-2 col-4 col-form-label">CATEGORIA</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="categoria">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="codeqr" class="col-sm-2 col-4 col-form-label">CODEQR</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="codeqr">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="deleted" class="col-sm-2 col-4 col-form-label">DELETED</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="deleted">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                <label for="estado" class="col-sm-2 col-4 col-form-label">ESTADO</label>
+                <div class="col-sm-10 col-8">
+                  <input class="form-control" list="datalistOptions" id="estado" placeholder="Type to search...">
+                      <datalist id="datalistOptions">
+                        <option *ngFor = "let asocEstatal of asocEstatales" [value]="asocEstatal.estado">{{ asocEstatal.nomEstado }}</option>
+                      </datalist>
+                </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="foto" class="col-sm-2 col-4 col-form-label">FOTO</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="foto">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="id" class="col-sm-2 col-4 col-form-label">ID</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="id">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="indicativo" class="col-sm-2 col-4 col-form-label">INDICATIVO</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="indicativo">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="inicio" class="col-sm-2 col-4 col-form-label">INICIO</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="inicio">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="location" class="col-sm-2 col-4 col-form-label">LOCATION</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="location">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="notas" class="col-sm-2 col-4 col-form-label">NOTAS</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="notas">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="termino" class="col-sm-2 col-4 col-form-label">TERMINO</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="termino">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="action" class="col-sm-2 col-4 col-form-label">ACTION</label>
+                  <div class="col-sm-10 col-8">
+                      <input type="text" class="form-control" id="action">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- end row -->
+
+<div class="row">
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
@@ -29,7 +139,6 @@
                                 <th>INDICATIVO</th>
                                 <th>INICIO</th>
                                 <th>LOCATION</th>
-                                <th>NOMBRE</th>
                                 <th>NOTAS</th>
                                 <th>TERMINO</th>
                                 <th>ACTION</th>
@@ -49,7 +158,6 @@
                                 <td>{{ account.indicativo }}</td>
                                 <td>{{ account.inicio }}</td>
                                 <td>{{ account.locacion }}</td>
-                                <td>{{ account.nombre }}</td>
                                 <td>{{ account.notas }}</td>
                                 <td>{{ account.termino }}</td>
                                 <td>ELIMINAR</td>

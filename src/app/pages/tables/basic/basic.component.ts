@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { DataService } from 'src/app/core/services/dataService';
 import { Account } from 'src/app/entity/account.entity';
+import { AsocEstatal } from 'src/app/entity/asocEstatal.entity';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -24,6 +25,23 @@ export class BasicComponent implements OnDestroy, OnInit {
    // bread crumb items
    breadCrumbItems!: Array<{}>;
    dataAccount!: Account[];
+   asocEstatales!: AsocEstatal[];
+   newAccount: Account = {
+     apellido: '',
+     categoria: '',
+     codeqr: '',
+     deleted: 0,
+     estado: '',
+     foto: '',
+     id: '',
+     idu: '',
+     indicativo: '',
+     inicio: '',
+     locacion: '',
+     nombre: '',
+     notas: '',
+     termino: ''
+   };
 
   constructor(private dataService: DataService) { }
 
@@ -68,6 +86,11 @@ export class BasicComponent implements OnDestroy, OnInit {
       this.dataAccount = response;
       console.log(response);
       this.dtTrigger.next();
+    });
+
+    this.dataService.getAsocEstatales()
+    .then((r) => {
+      this.asocEstatales = r;
     });
 
     this.dtOptions = {
