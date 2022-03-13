@@ -8,6 +8,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { TablesRoutingModule } from './tables-routing.modules';
 import { BasicComponent } from './basic/basic.component';
 import { DatatableComponent } from './datatable/datatable.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { DatatableComponent } from './datatable/datatable.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-
+    DataTablesModule
   ]
 })
 export class TablesModule { }

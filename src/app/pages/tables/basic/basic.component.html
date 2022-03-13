@@ -13,50 +13,50 @@
                         classes to re-align where needed.
                     </p>
                     <div class="table-responsive">
-                        <table class="table align-middle mb-0">
+
+                        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
                             <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Action</th>
-                                </tr>
+                              <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>APELLIDO</th>
+                                <th>CATEGORIA</th>
+                                <th>CODEQR</th>
+                                <th>DELETED</th>
+                                <th>ESTADO</th>
+                                <th>FOTO</th>
+                                <th>ID</th>
+                                <th>INDICATIVO</th>
+                                <th>INICIO</th>
+                                <th>LOCATION</th>
+                                <th>NOMBRE</th>
+                                <th>NOTAS</th>
+                                <th>TERMINO</th>
+                                <th>ACTION</th>
+                              </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>
-                                        <button type="button" class="btn btn-light btn-sm">View</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>
-                                        <button type="button" class="btn btn-light btn-sm">View</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>
-                                        <button type="button" class="btn btn-light btn-sm">View</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>
-                                        <button type="button" class="btn btn-light btn-sm">View</button>
-                                    </td>
-                                </tr>
+                              <tr *ngFor="let account of dataAccount">
+                                <td>{{ account.idu }}</td>
+                                <td>{{ account.nombre }}</td>
+                                <td>{{ account.apellido }}</td>
+                                <td>{{ account.categoria }}</td>
+                                <td>{{ account.codeqr }}</td>
+                                <td>{{ account.deleted }}</td>
+                                <td>{{ account.estado }}</td>
+                                <td>{{ account.foto }}</td>
+                                <td>{{ account.id }}</td>
+                                <td>{{ account.indicativo }}</td>
+                                <td>{{ account.inicio }}</td>
+                                <td>{{ account.locacion }}</td>
+                                <td>{{ account.nombre }}</td>
+                                <td>{{ account.notas }}</td>
+                                <td>{{ account.termino }}</td>
+                                <td>ELIMINAR</td>
+                              </tr>
                             </tbody>
-                        </table>
+                          </table>
+                        
                     </div>
                 </div>
             </div>
